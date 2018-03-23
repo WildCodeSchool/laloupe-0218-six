@@ -1,0 +1,27 @@
+h1 {
+  color: orange;
+  font-size: 10em;
+}
+
+p {
+  color: rgb(255, 255, 255);
+}
+
+@font-face {
+  font-family: "roma";
+  src: url("Forvertz.ttf");
+}
+
+h1 {
+  font-family: 'roma';
+}
+
+.rugle {
+  border: 3px solid orange;
+  font-size: 25px;
+}
+
+.row {
+  margin-left: 20%;
+  margin-right: 20%;
+}
