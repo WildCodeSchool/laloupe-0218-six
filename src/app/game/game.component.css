@@ -20,3 +20,18 @@ h1 {
   text-decoration: none;
   border-radius: 0px;
 }
+
+.btn-obtion {
+  background-color: white;
+  color: black !important;
+  padding: 4px 10px;
+  transition: all 0.2s ease;
+  border-radius: 10px;
+}
+
+.btn-obtion:hover {
+  color: black !important;
+  background-color: orange;
+  text-decoration: none;
+  border-radius: 3px;
+}

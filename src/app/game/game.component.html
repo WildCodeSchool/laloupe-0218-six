@@ -1,18 +1,56 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div class="my-container">
-  <a class="nav-item button-white" href="#">Player 1</a>
-  <a class="nav-item button-white offset-6" href="#">Player 2</a>
-  <a class="nav-item button-white offset-6" href="/home">HOME</a>
 
-  <div style="text-align:center">
-    <h1>GAME</h1>
-    <img class="plateaux" width="800" src="https://zupimages.net/up/18/13/ra5n.png" alt="" />
+<a class="nav-item button-white col_2 offset-" href="#">Player 1</a>
+<a class="nav-item button-white offset-" href="#">Player 2</a>
+
+<div style="text-align:center">
+  <h1>GAME</h1>
+  <img class="plateaux" width="800" src="https://zupimages.net/up/18/13/ra5n.png" alt="" />
+
+</div>
+
+<div style="text-align:center">
+
+
+
+  <div class="container col-12">
+
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+      Rugle !
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Rugle</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            Players Blue and Red take turns placing hexes. Blue plays first. Each hex (other than the first two) must be played adjacent
+            to two previously played hexes (playable options are shown in light gray). win if you surround at least one of
+            your opponents' hexes with your own, or if you play 5 of your own hexes in a row. You can hit 1 or 2 to zoom
+            in or out respectively Hit "U" to undo Enjoy!
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
   </div>
-
-
-
-
-
+  <p></p>
+  <a class="nav-item btn-obtion" href="home">Exit</a>
+  <a class="nav-item btn-obtion" href="game">Replay</a>
 </div>
