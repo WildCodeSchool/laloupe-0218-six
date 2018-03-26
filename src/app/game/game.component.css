@@ -5,3 +5,18 @@ h1 {
 .plateaux {
   max-width: 90%;
 }
+
+.button-white {
+  background-color: white;
+  color: black !important;
+  padding: 4px 10px;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.button-white:hover {
+  color: black !important;
+  background-color: #f8ead6;
+  text-decoration: none;
+  border-radius: 0px;
+}
