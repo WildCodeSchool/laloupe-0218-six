@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,24 +13,3 @@ export class HomeComponent implements OnInit {
   }
 
 }
-const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent }
-]
-
-
-@NgModule({
-  declarations: [
-    HomeComponent,
-
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(
-      appRoutes, )
-  ],
-  providers: [],
-
-})
-export class AppModule { }
-
-
