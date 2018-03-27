@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
+=======
+>>>>>>> e3e7ab5719da965623afd6447d0d0d6f4282349c
 
 @Component({
   selector: 'app-home',
@@ -38,6 +41,7 @@ export class HomeComponent implements OnInit {
   }
   
 }
+<<<<<<< HEAD
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent }
 ]
@@ -60,3 +64,5 @@ const appRoutes: Routes = [
 export class AppModule { }
 
 
+=======
+>>>>>>> e3e7ab5719da965623afd6447d0d0d6f4282349c

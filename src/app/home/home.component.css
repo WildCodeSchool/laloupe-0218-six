@@ -1,6 +1,6 @@
 h1 {
   color: orange;
-  font-size: 10em;
+  font-size: 8em;
 }
 
 p {
@@ -18,10 +18,25 @@ h1 {
 
 .rugle {
   border: 3px solid orange;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .row {
   margin-left: 20%;
   margin-right: 20%;
+}
+
+.button-white {
+  background-color: orange;
+  color: black !important;
+  padding: 4px 10px;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.button-white:hover {
+  color: black !important;
+  background-color: #f8ead6;
+  text-decoration: none;
+  border-radius: 0px;
 }
