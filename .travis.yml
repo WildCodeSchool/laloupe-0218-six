@@ -5,3 +5,9 @@ node_js:
 script:
   - npm run lint
   - ./deploy.sh
+
+deploy:
+  provider: script
+  script: ./deploy.sh
+  on:
+    branch: master
