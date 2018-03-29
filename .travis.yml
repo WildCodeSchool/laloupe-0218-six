@@ -3,11 +3,7 @@ node_js:
   - "9"
 
 script:
-  - npm run lint
-  - bash deploy
-
-deploy:
-  provider: script
-  script: bash deploy
-  on:
-    branch: master
+  - npm run lint:js
+  - npm run lint:html
+  - npm run lint:style
+  - bash deploy.sh
