@@ -15,8 +15,7 @@ import { environment } from '../environments/environment';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'game', component: GameComponent }
-
-]
+];
 
 
 @NgModule({

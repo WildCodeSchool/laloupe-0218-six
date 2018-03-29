@@ -14,7 +14,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class HomeComponent implements OnInit {
 
   constructor(
-    
+
     private router: Router,
     private authService: AuthService
   ) { }
@@ -22,13 +22,13 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.authService.authState.subscribe(authState => {
       console.log(authState);
-        if (authState) {
-          this.router.navigate(['profile', 42]);
-        } else {
-          console.log("Not connected");
-        }
-        
-  })
+      if (authState) {
+        this.router.navigate(['profile', 42]);
+      } else {
+        console.log('Not connected');
+      }
+
+    });
   }
   googleSignIn() {
     this.authService.googleSignIn();
@@ -36,11 +36,11 @@ export class HomeComponent implements OnInit {
   SignOut() {
     this.authService.googleSignOut();
   }
-  
+
 }
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent }
-]
+];
 
 
 @NgModule({
