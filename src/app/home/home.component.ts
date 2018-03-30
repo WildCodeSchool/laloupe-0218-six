@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.authService.authState.subscribe(authState => {
+    this.authService.authState.subscribe(authState); => {
       console.log(authState);
       if (authState) {
         this.router.navigate(['profile', 42]);
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
         console.log('Not connected');
       }
 
-    });
+    })
   }
   googleSignIn() {
     this.authService.googleSignIn();
