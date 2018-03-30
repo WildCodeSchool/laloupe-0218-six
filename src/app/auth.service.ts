@@ -12,9 +12,9 @@ export class AuthService {
     public afAuth: AngularFireAuth,
   ) {
     this.authState = this.afAuth.authState;
-   }
+  }
 
-   googleSignIn() {
+  googleSignIn() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
   googleSignOut() {

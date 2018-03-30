@@ -6,6 +6,6 @@ export const environment = {
     databaseURL: 'https://appli-six.firebaseio.com',
     projectId: 'appli-six',
     storageBucket: 'appli-six.appspot.com',
-    messagingSenderId: '347318477577'
+    messagingSenderId: '347318477577',
   },
 };
