@@ -10,7 +10,7 @@ describe('GameComponent', () => {
     TestBed.configureTestingModule({
       declarations: [GameComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
