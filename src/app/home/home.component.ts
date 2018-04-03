@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
-
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-home',
@@ -12,26 +13,11 @@ import { AuthService } from './../auth.service';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private router: Router,
-    private authService: AuthService,
+
   ) { }
 
   ngOnInit() {
-    this.authService.authState.subscribe((authState) => {
-      console.log(authState);
-      if (authState) {
-        this.router.navigate(['profile', 42]);
-      } else {
-        console.log('Not connected');
-      }
 
-    });
-  }
-  googleSignIn() {
-    this.authService.googleSignIn();
-  }
-  signOut() {
-    this.authService.googleSignOut();
   }
 
 }
