@@ -94,10 +94,6 @@ THE SOFTWARE.
 MIT
 MIT
 
-@angular/common@5.2.9
-MIT
-MIT
-
 @angular/platform-browser@5.2.9
 MIT
 MIT
@@ -107,6 +103,10 @@ MIT
 MIT
 
 angularfire2@5.0.0-rc.6
+MIT
+MIT
+
+@angular/common@5.2.9
 MIT
 MIT
 
