@@ -85,9 +85,10 @@ p {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
   -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  animation-duration: 3s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes rubberBand {
