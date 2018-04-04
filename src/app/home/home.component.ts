@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.authService.authState.subscribe((authState) => {
       console.log(authState);
       if (authState) {
-        this.router.navigate(['profile', 42]);
+        this.router.navigate(['game']);
       } else {
         console.log('Not connected');
       }

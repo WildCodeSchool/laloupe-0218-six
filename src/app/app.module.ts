@@ -9,7 +9,7 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'game', component: GameComponent },
 ];
 
