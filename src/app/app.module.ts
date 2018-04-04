@@ -7,7 +7,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 import { GameComponent } from './game/game.component';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
-
+import { AngularFireAuth } from 'angularfire2/auth';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'game', component: GameComponent },
