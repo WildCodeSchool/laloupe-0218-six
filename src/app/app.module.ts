@@ -24,6 +24,8 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuth,
+    
   ],
   providers: [
     AuthService,
