@@ -25,7 +25,7 @@ export class GameComponent implements OnInit {
     canvas.beginPath();
     canvas.moveTo(x + size * Math.cos(0), y + size * Math.sin(0));
 
-    for (side; side < 7; side++) {
+    for (side; side < 7; [side = side + 1]) {
       canvas.lineTo(x + size * Math.cos(side * 2 * Math.PI / 6), y + size
        * Math.sin(side * 2 * Math.PI / 6));
     }
