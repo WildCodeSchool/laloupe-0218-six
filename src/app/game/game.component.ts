@@ -16,7 +16,7 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
 
-    let canvas = document.getElementById('mycanvas').getContext('2d'), side = 0,
+    const canvas = document.getElementById('mycanvas').getContext('2d'), side = 0,
       size = 30,
       x = 30,
       y = 30;
@@ -83,7 +83,7 @@ export class GameComponent implements OnInit {
 
   /*    context.fillStyle = 'rgb(112, 58, 255)'; // Toutes les prochaines formes "stroke" 
   /* seront bleues et semi-transparentes.  */
-};
+}
 
 
 
