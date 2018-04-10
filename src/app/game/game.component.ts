@@ -16,20 +16,22 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
 
-    const canvas = document.getElementById('mycanvas').getContext('2d'), side = 0,
+    let canvas = document.getElementById('mycanvas').getContext('2d'), side = 0,
       size = 30,
       x = 30,
       y = 30;
+    
 
     canvas.beginPath();
     canvas.moveTo(x + size * Math.cos(0), y + size * Math.sin(0));
 
     for (side; side < 7; side++) {
-      canvas.lineTo(x + size * Math.cos(side * 2 * Math.PI / 6), y + size * Math.sin(side * 2 * Math.PI / 6));
+      canvas.lineTo(x + size * Math.cos(side * 2 * Math.PI / 6), y + size
+       * Math.sin(side * 2 * Math.PI / 6));
     }
 
-    canvas.fillStyle = "#333333";
-    canvas.fill();
+    canvas.strokeStyle = '#ffffff';
+    canvas.stroke();
 
   }
   /* 
@@ -80,7 +82,7 @@ export class GameComponent implements OnInit {
   /* pleines seront X. */
 
   /*    context.fillStyle = 'rgb(112, 58, 255)'; // Toutes les prochaines formes "stroke" 
-     /* seront bleues et semi-transparentes.  */
+  /* seront bleues et semi-transparentes.  */
 };
 
 
