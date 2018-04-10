@@ -122,7 +122,14 @@
     transform-origin: center;
   }
 }
+#mycanvas {
+background-color:white;
+  }
+ 
 
+
+
+/* 
 .hexagon {
   position: relative;
   width: 300px; 
@@ -151,6 +158,6 @@
   border-top: 86.60px solid #64C7CC;
 }
 
-
+ */
 
 
