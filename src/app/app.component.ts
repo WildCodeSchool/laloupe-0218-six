@@ -15,13 +15,13 @@ export class AppComponent {
   objObservable: Observable<any>;
 
   constructor(private db: AngularFirestore) {
-    this.items = db.collection('items').valueChanges();
-    this.objObservable = db.doc('items/oPAbAsBtCQQYzD7zjEg4').valueChanges();
+    // this.items = db.collection('items').valueChanges();
+    // this.objObservable = db.doc('items/oPAbAsBtCQQYzD7zjEg4').valueChanges();
 
-    this.generatePawns();
+    // this.generatePawns();
   }
-  generatePawns() {
-    const pawnsCollection = this.db.doc('pawns');
-    pawnsCollection.valueChanges().take(1).subscribe();
-  }
+  // generatePawns() {
+  //   const pawnsCollection = this.db.doc('pawns');
+  //   pawnsCollection.valueChanges().take(1).subscribe();
+  // }
 }  

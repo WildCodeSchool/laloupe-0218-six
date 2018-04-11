@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.authService.authState.subscribe((authState) => {
       console.log(authState);
       if (authState) {
-        this.router.navigate(['game']);
+        this.router.navigate(['matchmaking']);
       } else {
         console.log('Not connected');
       }
