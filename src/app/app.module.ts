@@ -11,9 +11,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 
+import { MatchMakingComponent } from './match-making/match-making.component';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'game', component: GameComponent },
+  { path: 'game/:id', component: GameComponent },
+  { path: 'matchmaking', component: MatchMakingComponent },
 
 ];
 
@@ -23,6 +26,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     GameComponent,
+    MatchMakingComponent,
+    MatchMakingComponent,
   ],
   imports: [
     BrowserModule,
