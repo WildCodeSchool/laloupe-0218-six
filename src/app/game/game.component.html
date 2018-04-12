@@ -31,54 +31,73 @@
 
 
 
-  <img class="plateaux" width="800" src="https://zupimages.net/up/18/13/ra5n.png" alt="" />
-
-</div>
-
-<div style="text-align:center">
+  <!--   <img class="plateaux" width="800" src="https://zupimages.net/up/18/13/ra5n.png" alt="" /> -->
 
 
 
-  <div class="container col-12">
-
-    <!-- Button to Open the Modal -->
-    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
-      Rules !
-    </button>
-
-    <!-- The Modal -->
-    <div class="modal fade" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
+  <div style="text-align:center">
 
 
 
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Rules</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
 
-          <!-- Modal body -->
-          <div class="modal-body">
-            Players White and Orange take turns placing hexes. White plays first. Each hex (other than the first two) must be played
-            adjacent to two previously played hexes (playable options are shown in light gray). win if you surround at least
-            one of your opponents' hexes with your own, or if you play 5 of your own hexes in a row.
-          </div>
 
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <a type="button" class="btn btn-info" href="">Replay</a>
-            <a type="button" class="btn btn-info" data-dismiss="modal">Close</a>
-          </div>
 
-        </div>
-      </div>
+    <div class="container col-12">
+
+      <div class="hexagon"></div>
+
     </div>
 
-  </div>
-  <p></p>
-  <a class="nav-item btn-obtion" href="">Exit</a>
 
-  <!--  <button (click)="googleSignOut()">Google Sign Out</button>  -->
-</div>
+    <!--  <script src="canvas.js"></script> -->
+
+    <canvas id="mycanvas" width="500" height="500">
+
+      Message pour les navigateurs ne supportant pas encore canvas.
+
+    </canvas>
+
+    <div class="container col-12">
+
+      <!-- Button to Open the Modal -->
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+        Rules !
+      </button>
+
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Rules</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              Players White and Orange take turns placing hexes. White plays first. Each hex (other than the first two) must be played
+              adjacent to two previously played hexes (playable options are shown in light gray). win if you surround at
+              least one of your opponents' hexes with your own, or if you play 5 of your own hexes in a row.
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <a type="button" class="btn btn-info" href="">Replay</a>
+              <a type="button" class="btn btn-info" data-dismiss="modal">Close</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <a class="nav-item btn-obtion" href="">Exit</a>
+
+      <!--  <button (click)="googleSignOut()">Google Sign Out</button>  -->
+    </div>
+    <br/>
+
+  </div>

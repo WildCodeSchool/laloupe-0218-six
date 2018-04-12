@@ -8,11 +8,25 @@ export class AuthService {
 
   public authState = null;
 
-  constructor(
-    public afAuth: AngularFireAuth,
-  ) {
+
+
+  authId: string;
+  name: string;
+
+  constructor(private afAuth: AngularFireAuth) {
     this.authState = this.afAuth.authState;
+    this.afAuth.authState.subscribe((user) => {
+      if (user) {
+        this.authId = user.uid;
+        this.name = user.displayName;
+      } else {
+        this.authId = null;
+        this.name = null;
+      }
+    });
   }
+
+
 
   googleSignIn() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
