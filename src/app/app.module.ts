@@ -1,20 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
-
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { RouterModule, Routes } from '@angular/router';
-import { GameComponent } from './game/game.component';
-
+import { RouterModule, Routes, Router } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+// import { AngularFireAuth } from 'angularfire2/auth';
+import { HomeComponent } from './home/home.component';
+import { GameComponent } from './game/game.component';
+
+import { MatchMakingComponent } from './match-making/match-making.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'game', component: GameComponent }
+  { path: '', component: HomeComponent },
+  { path: 'game/:id', component: GameComponent },
+  { path: 'matchmaking', component: MatchMakingComponent },
+
 ];
 
 
@@ -23,17 +26,20 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     GameComponent,
-
+    MatchMakingComponent,
+    MatchMakingComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    
   ],
   providers: [
-    AngularFireAuth,
-    AuthService
+    AuthService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

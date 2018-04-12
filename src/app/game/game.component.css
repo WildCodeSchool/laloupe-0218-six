@@ -1,9 +1,6 @@
-h1 {
-  color: rgb(255, 255, 255);
-}
-
 .plateaux {
   max-width: 90%;
+  margin-top: 2%;
 }
 
 .button-white {
@@ -42,10 +39,126 @@ h1 {
 
 /* player 1 & 2 */
 
-.firstplayer{
+.firstplayer {
   float: left;
+  margin-top: 4%;
 }
 
-.secondplayer{
+.secondplayer {
   float: right;
+  margin-top: 4%;
 }
+
+.hexagon-icon {
+  position: relative;
+  width: 100px;
+  height: 57.74px;
+  background-color: orange;
+  margin: 28.87px 0;
+  border-left: solid 5px #ffffff;
+  border-right: solid 5px #ffffff;
+  margin-top: 70%;
+  margin-left: 20%;
+}
+
+.hexagon-icon:before,
+.hexagon-icon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 70.71px;
+  height: 70.71px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 9.6447px;
+}
+
+.hexagon-icon:before {
+  top: -35.3553px;
+  border-top: solid 7.0711px #ffffff;
+  border-right: solid 7.0711px #ffffff;
+}
+
+.hexagon-icon:after {
+  bottom: -35.3553px;
+  border-bottom: solid 7.0711px #ffffff;
+  border-left: solid 7.0711px #ffffff;
+}
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, -360deg);
+  }
+  100% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, -360deg);
+  }
+  100% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+  }
+}
+#mycanvas {
+background-color:black;
+margin-top: 10%;
+  }
+ 
+
+
+
+/* 
+.hexagon {
+  position: relative;
+  width: 300px; 
+  height: 173.21px;
+  background-color: #64C7CC;
+  margin: 86.60px 0;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 86.60px solid #64C7CC;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 86.60px solid #64C7CC;
+}
+
+ */
+
+
