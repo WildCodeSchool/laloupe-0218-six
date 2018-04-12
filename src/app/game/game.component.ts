@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
+/* import { defineGrid } from 'honeycomb-grid'
 
 
+const Grid = defineGrid()
+Grid.rectangle({ width: 4, height: 4 })
+
+
+
+ */
 
 @Component({
   selector: 'app-game',
