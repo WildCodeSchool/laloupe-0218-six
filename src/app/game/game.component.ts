@@ -25,6 +25,7 @@ import DefaultMapViewController from '../../DefaultMapViewController';
 
 export class GameComponent implements OnInit {
   roomId: string;
+  opponentId;
   room;
   mapView;  
   mapSize = paramInt('size', 20);
@@ -122,12 +123,24 @@ export class GameComponent implements OnInit {
           console.log('i loose');
         }
       }
+      if (Object.keys(this.room.players).length > 1) {
+        this.opponentId = (Object.keys(this.room.players)[0] === this.authService.authId) ? 
+        Object.keys(this.room.players)[1] : Object.keys(this.room.players)[0];
+      }
       if (this.room.players[this.authService.authId]) {
         const me = this.room.players[this.authService.authId];
         for (let index = 0; index < me.pawns.length; index += 1) {
           const element = me.pawns[index];
           // console.log(element);
           this.setTile(element.q, element.r, 1);
+        }
+      }
+      if (this.room.players[this.opponentId]) {
+        const opponent = this.room.players[this.opponentId];
+        for (let index = 0; index < opponent.pawns.length; index += 1) {
+          const element = opponent.pawns[index];
+          // console.log(element);
+          this.setTile(element.q, element.r, 2);
         }
       }
     });
@@ -166,6 +179,8 @@ export class GameComponent implements OnInit {
   reducer(acc: boolean, d: TileData): boolean {
     return acc && d.clouds;
   }
+  // ￼ Rules !
+  
 
   checkNeighbors2(q: number, r: number): boolean {
     const neighbors = this.mapView.getTileGrid().neighbors(q, r, 1);
