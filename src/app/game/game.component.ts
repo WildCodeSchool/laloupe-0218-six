@@ -20,6 +20,7 @@ import DefaultMapViewController from '../../DefaultMapViewController';
 })
 
 export class GameComponent implements OnInit {
+  message: string;
   roomId: string;
   opponentId;
   room;
@@ -29,7 +30,7 @@ export class GameComponent implements OnInit {
 
   app;
   constructor(private route: ActivatedRoute, private db: AngularFirestore,
-              private authService: AuthService) { }
+    private authService: AuthService) { }
   ngOnInit() {
     this.roomId = this.route.snapshot.paramMap.get('id');
     this.initView();
@@ -98,7 +99,7 @@ export class GameComponent implements OnInit {
     this.mapView.onLoaded = () => {
       // uncover tiles around selection
       this.setFogAround(this.mapView.selectedTile.q,
-                        this.mapView.selectedTile.r, 20, false, false, false);
+        this.mapView.selectedTile.r, 20, false, false, false);
     };
 
     this.mapView.onTileSelected = (tile: TileData) => {
@@ -111,10 +112,12 @@ export class GameComponent implements OnInit {
         this.room = room;
         if (this.room.win) {
           if (this.room.win === this.authService.authId) {
-            console.log('i win');
+            this.message = 'I Win';
           } else {
-            console.log('i loose');
+            this.message = 'I Loose';
           }
+          document.getElementById('openModalButton').click();
+
         }
         if (Object.keys(this.room.players).length > 1) {
           this.opponentId = (Object.keys(this.room.players)[0] === this.authService.authId) ?
