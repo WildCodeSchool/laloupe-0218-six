@@ -3,10 +3,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AuthService } from '../auth.service';
-// import { defineGrid, extendHex } from 'honeycomb-grid-vincent';
-// import * as PIXI from 'pixi.js';
-// import { init, putTile } from './main';
-// import { initView, setTile } from './view';
 import { initInput } from './input';
 import { paramInt, paramFloat, varying } from './util';
 import { qrRange, range, loadFile, loadJSON, loadTexture } from '../../util';
@@ -100,15 +96,12 @@ export class GameComponent implements OnInit {
     controller.debugOutput = document.getElementById('debug') as HTMLElement;
   
     this.mapView.onLoaded = () => {
-          // uncover tiles around initial selection
+          // uncover tiles around selection
       this.setFogAround(this.mapView.selectedTile.q,
                         this.mapView.selectedTile.r, 20, false, false, false);
-      // this.setFogAround(this.mapView.selectedTile.q, 
-      //                   this.mapView.selectedTile.r, 0, true, false, false);
     };
   
     this.mapView.onTileSelected = (tile: TileData) => {
-          // uncover tiles around selection
       this.setFogAround(tile.q, tile.r, 0, false, true, true);
     };
   
@@ -168,9 +161,8 @@ export class GameComponent implements OnInit {
 
   checkNeighbors(q: number, r: number): boolean {
     const neighbors = this.mapView.getTileGrid().neighbors(q, r, 1);
-    neighbors.shift();
     const isWin = neighbors.reduce((acc, t) => {
-      return acc || this.checkNeighbors2(q, r);
+      return acc || this.checkNeighbors2(t.q, t.r);
     },                             false);
     console.log('tadaaa', isWin);
     return isWin;
@@ -184,7 +176,6 @@ export class GameComponent implements OnInit {
 
   checkNeighbors2(q: number, r: number): boolean {
     const neighbors = this.mapView.getTileGrid().neighbors(q, r, 1);
-    neighbors.shift();    
     return neighbors.reduce(this.reducer, true);
   }
   
