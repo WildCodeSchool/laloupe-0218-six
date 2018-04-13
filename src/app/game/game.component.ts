@@ -103,8 +103,8 @@ export class GameComponent implements OnInit {
           // uncover tiles around initial selection
       this.setFogAround(this.mapView.selectedTile.q,
                         this.mapView.selectedTile.r, 20, false, false, false);
-      this.setFogAround(this.mapView.selectedTile.q, 
-                        this.mapView.selectedTile.r, 0, true, false, false);
+      // this.setFogAround(this.mapView.selectedTile.q, 
+      //                   this.mapView.selectedTile.r, 0, true, false, false);
     };
   
     this.mapView.onTileSelected = (tile: TileData) => {
