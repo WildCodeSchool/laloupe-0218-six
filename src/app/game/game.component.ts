@@ -175,6 +175,9 @@ export class GameComponent implements OnInit {
 
 
   checkNeighbors2(q: number, r: number): boolean {
+    if (this.mapView.getTile(q, r).fog === false) {
+      return false;
+    }
     const neighbors = this.mapView.getTileGrid().neighbors(q, r, 1);
     return neighbors.reduce(this.reducer, true);
   }
