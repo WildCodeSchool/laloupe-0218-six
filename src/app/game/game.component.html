@@ -1,9 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div id="debug" style="text-align:center">
+<div style="text-align:center">
 
   <!-- Player 1 score and pseudo -->
 
-  <div id ="text" class="firstplayer">
+  <div id="player1" class="firstplayer">
     <a class="nav-item button-white player1" href="#">Player 1</a>
     <br/>
     <img class="hexagon p1" src="https://zupimages.net/up/18/13/my9v.png" alt="score" width="230px" />
@@ -16,7 +16,7 @@
 
   <!-- Player 2 score and pseudo -->
 
-  <div id ="text" class="secondplayer">
+  <div id="player2" class="secondplayer">
     <a class="nav-item button-white player2" href="#">Player 2</a>
     <br/>
     <img class="hexagon p2" src="https://zupimages.net/up/18/13/my9v.png" alt="score" width="230px" />
@@ -24,63 +24,51 @@
     <img class="hexagon2 p2j" src="https://zupimages.net/up/18/13/my9v.png" alt="score" width="230px" />
     <div class="hexagon-icon rotateIn"></div>
   </div>
-</div>
+
 
   <canvas></canvas>
-<!-- <div id ='gridGame'></div> -->
+  <!-- <div id='gridGame'></div> -->
 
 
-  <div id="debug" style="text-align:center">
+  <!-- Button to Open the Modal -->
 
 
-    <div class="container col-12">
-
-      <div class="hexagon"></div>
-
-    </div>
-
-
-    <div class="container col-12">
-
-      <!-- Button to Open the Modal -->
-      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
-        Rules !
-      </button>
-
-      <!-- The Modal -->
-      <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
 
 
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Rules</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-              Players White and Orange take turns placing hexes. White plays first. Each hex (other than the first two) must be played
-              adjacent to two previously played hexes (playable options are shown in light gray). win if you surround at
-              least one of your opponents' hexes with your own, or if you play 5 of your own hexes in a row.
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <a type="button" class="btn btn-info" href="">Replay</a>
-              <a type="button" class="btn btn-info" data-dismiss="modal">Close</a>
-            </div>
-
-          </div>
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Rules</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          Players White and Orange take turns placing hexes. White plays first. Each hex (other than the first two) must be played
+          adjacent to two previously played hexes (playable options are shown in light gray). win if you surround at least
+          one of your opponents' hexes with your own, or if you play 5 of your own hexes in a row.
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <a type="button" class="btn btn-info" href="">Replay</a>
+          <a type="button" class="btn btn-info" data-dismiss="modal">Close</a>
+        </div>
+
       </div>
-      <p></p>
-      <a class="nav-item btn-obtion" href="">Exit</a>
-
-      <!--  <button (click)="googleSignOut()">Google Sign Out</button>  -->
     </div>
-    <br/>
-
   </div>
+  <p></p>
+  <div id="bottomfooter">
+    <a class="nav-item btn-obtion" href="">Exit</a>
+
+    <button class="btn btn-info" data-toggle="modal" data-target="#myModal">
+      Rules !
+    </button>
+  </div>
+  <!--  <button (click)="googleSignOut()">Google Sign Out</button>  -->
+</div>

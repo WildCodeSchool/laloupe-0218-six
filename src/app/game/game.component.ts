@@ -23,9 +23,9 @@ export class GameComponent implements OnInit {
   roomId: string;
   opponentId;
   room;
-  mapView;  
+  mapView;
   mapSize = paramInt('size', 20);
-  zoom = paramFloat('zoom', 25);
+  zoom = paramFloat('zoom', 30);
 
   app;
   constructor(private route: ActivatedRoute, private db: AngularFirestore,
@@ -45,21 +45,21 @@ export class GameComponent implements OnInit {
   asset(relativePath: string): string {
     return '../../assets/' + relativePath;
   }
-  
-  
+
+
   async loadTextureAtlas() {
     return loadJSON<TextureAtlas>(this.asset('land-atlas.json'));
   }
-  
+
   async generateMap(mapSize: number) {
-  
+
     return generateRandomMap(mapSize, (q, r, height): TileData => {
       const terrain = 'ocean';
-  
+
       return { q, r, terrain, height: 0, treeIndex: 3, rivers: null, fog: false, clouds: false };
     });
   }
-  
+
   async initGrid(mapSize: number, initialZoom: number): Promise<MapView> {
     const textureLoader = new TextureLoader();
     const loadTexture = (name: string) => {
@@ -81,65 +81,65 @@ export class GameComponent implements OnInit {
       gridWidth: 0.025,
       gridColor: new Color(0x42322b),
       gridOpacity: 0.25,
-  
-  
+
+
     };
     const [map, atlas] = await Promise.all([this.generateMap(mapSize), this.loadTextureAtlas()]);
-  
+
     options.terrainAtlas = atlas;
-  
+
     this.mapView = new MapView();
     this.mapView.zoom = initialZoom;
     this.mapView.load(map, options);
-  
+
     const controller = this.mapView.controller as DefaultMapViewController;
     controller.debugOutput = document.getElementById('debug') as HTMLElement;
-  
+
     this.mapView.onLoaded = () => {
-          // uncover tiles around selection
+      // uncover tiles around selection
       this.setFogAround(this.mapView.selectedTile.q,
                         this.mapView.selectedTile.r, 20, false, false, false);
     };
-  
+
     this.mapView.onTileSelected = (tile: TileData) => {
       this.setFogAround(tile.q, tile.r, 0, false, true, true);
     };
-  
+
     this.db.doc('rooms/' + this.roomId)
-    .valueChanges()
-    .subscribe((room) => {
-      this.room = room;
-      if (this.room.win) {
-        if (this.room.win === this.authService.authId) {
-          console.log('i win');
-        } else {
-          console.log('i loose');
+      .valueChanges()
+      .subscribe((room) => {
+        this.room = room;
+        if (this.room.win) {
+          if (this.room.win === this.authService.authId) {
+            console.log('i win');
+          } else {
+            console.log('i loose');
+          }
         }
-      }
-      if (Object.keys(this.room.players).length > 1) {
-        this.opponentId = (Object.keys(this.room.players)[0] === this.authService.authId) ? 
-        Object.keys(this.room.players)[1] : Object.keys(this.room.players)[0];
-      }
-      if (this.room.players[this.authService.authId]) {
-        const me = this.room.players[this.authService.authId];
-        for (let index = 0; index < me.pawns.length; index += 1) {
-          const element = me.pawns[index];
-          // console.log(element);
-          this.setTile(element.q, element.r, 1);
+        if (Object.keys(this.room.players).length > 1) {
+          this.opponentId = (Object.keys(this.room.players)[0] === this.authService.authId) ?
+            Object.keys(this.room.players)[1] : Object.keys(this.room.players)[0];
         }
-      }
-      if (this.room.players[this.opponentId]) {
-        const opponent = this.room.players[this.opponentId];
-        for (let index = 0; index < opponent.pawns.length; index += 1) {
-          const element = opponent.pawns[index];
-          // console.log(element);
-          this.setTile(element.q, element.r, 2);
+        if (this.room.players[this.authService.authId]) {
+          const me = this.room.players[this.authService.authId];
+          for (let index = 0; index < me.pawns.length; index += 1) {
+            const element = me.pawns[index];
+            // console.log(element);
+            this.setTile(element.q, element.r, 1);
+          }
         }
-      }
-    });
+        if (this.room.players[this.opponentId]) {
+          const opponent = this.room.players[this.opponentId];
+          for (let index = 0; index < opponent.pawns.length; index += 1) {
+            const element = opponent.pawns[index];
+            // console.log(element);
+            this.setTile(element.q, element.r, 2);
+          }
+        }
+      });
     return this.mapView;
   }
-  
+
   setFogAround(q: number, r: number, range: number,
                fog: boolean, clouds: boolean, isPlayer: boolean) {
     const tiles = this.mapView.getTileGrid().neighbors(q, r, range);
@@ -172,13 +172,13 @@ export class GameComponent implements OnInit {
     return acc && d.clouds;
   }
   // ￼ Rules !
-  
+
 
   checkNeighbors2(q: number, r: number): boolean {
     const neighbors = this.mapView.getTileGrid().neighbors(q, r, 1);
     return neighbors.reduce(this.reducer, true);
   }
-  
+
   setTile(q, r, mode) {
     const clouds = (mode === 1) ? true : false;
     const fog = (mode === 2) ? true : false;
