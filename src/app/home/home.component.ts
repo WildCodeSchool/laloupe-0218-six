@@ -18,18 +18,28 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // this.authService.authState.subscribe((authState) => {
+    //   console.log(authState);
+    //   if (authState) {
+    //     this.router.navigate(['matchmaking']);
+    //   } else {
+    //     console.log('Not connected');
+    //   }
+
+    // });
+  }
+  googleSignIn() {
+    
     this.authService.authState.subscribe((authState) => {
       console.log(authState);
       if (authState) {
         this.router.navigate(['matchmaking']);
       } else {
+        this.authService.googleSignIn();
         console.log('Not connected');
       }
 
     });
-  }
-  googleSignIn() {
-    this.authService.googleSignIn();
   }
   signOut() {
     this.authService.googleSignOut();
