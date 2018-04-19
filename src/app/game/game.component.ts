@@ -44,7 +44,7 @@ export class GameComponent implements OnInit {
     initInput(mapView);
   }
   asset(relativePath: string): string {
-    return '../../assets/' + relativePath;
+    return 'assets/' + relativePath;
   }
 
 
