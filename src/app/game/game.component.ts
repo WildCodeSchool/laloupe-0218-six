@@ -30,7 +30,7 @@ export class GameComponent implements OnInit {
 
   app;
   constructor(private route: ActivatedRoute, private db: AngularFirestore,
-    private authService: AuthService) { }
+              private authService: AuthService) { }
   ngOnInit() {
     this.roomId = this.route.snapshot.paramMap.get('id');
     this.initView();
@@ -99,7 +99,7 @@ export class GameComponent implements OnInit {
     this.mapView.onLoaded = () => {
       // uncover tiles around selection
       this.setFogAround(this.mapView.selectedTile.q,
-        this.mapView.selectedTile.r, 20, false, false, false);
+                        this.mapView.selectedTile.r, 20, false, false, false);
     };
 
     this.mapView.onTileSelected = (tile: TileData) => {
