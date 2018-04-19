@@ -156,49 +156,12 @@
   border-left: solid 7.0711px #ffffff;
 }
 
-.rotateIn {
-  -webkit-animation-name: rotateIn;
-  animation-name: rotateIn;
-  -webkit-animation-duration: 1s;
-  animation-duration: 4s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes rotateIn {
-  0% {
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    -webkit-transform: rotate3d(0, 0, 1, 0deg);
-    transform: rotate3d(0, 0, 1, -360deg);
-  }
-  100% {
-    -webkit-transform-origin: center;
-    transform-origin: center;
-  }
-}
-
-@keyframes rotateIn {
-  0% {
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    -webkit-transform: rotate3d(0, 0, 1, 0deg);
-    transform: rotate3d(0, 0, 1, -360deg);
-  }
-  100% {
-    -webkit-transform-origin: center;
-    transform-origin: center;
-  }
-}
-
 #gridGame {
   width: 100%;
   height: 100%;
 }
 
 canvas {
-  display: block;
   background-color: rgb(53, 2, 54);
   width: 100vw;
   height: 100vh;
