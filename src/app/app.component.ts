@@ -24,4 +24,4 @@ export class AppComponent {
   //   const pawnsCollection = this.db.doc('pawns');
   //   pawnsCollection.valueChanges().take(1).subscribe();
   // }
-}  
+}
